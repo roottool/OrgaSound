@@ -1,0 +1,24 @@
+<div class="navBar">
+  <div id="logo"></div>
+  <div id="heading">
+    <a routerLink="/">OrgaSound</a>
+  </div>
+  <div id="volumeArea">
+    <label>volume:</label>
+    <input id="volume" class="form-control ng-pristine ng-untouched ng-valid" min="0" max="1" step="0.01" value="0.5" type="range">
+  </div>
+  <div class="links">
+    <span>
+      <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
+    </span>
+    <span>
+      <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a>
+    </span>
+    <span>
+      <span id="userName" *ngIf="(user|async)?.uid">Hello, {{userName}}</span>
+    </span>
+    <span>
+      <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
+    </span>
+  </div>
+</div>
