@@ -2,7 +2,7 @@
 
 OrgaSoundは[Angular CLI](https://github.com/angular/angular-cli) version 6.2.2で作成されています。
 バックエンドについては、firebaseを使用しています。
-また、OrgaSoundは[base-chat](https://github.com/wesdoyle/base-chat)を基に作成しています。
+また、OrgaSoundは[BaseChat](https://github.com/wesdoyle/base-chat)を基に作成しています。
 レスポンシブデザインではないため、現状ではスマートフォンから閲覧するとレイアウトが崩れてしまう可能性があります。
 
 ## 主な機能
@@ -11,7 +11,10 @@ OrgaSoundは[Angular CLI](https://github.com/angular/angular-cli) version 6.2.2�
  firebaseのパスワード認証サービスを用いてアカウント作成及びログインを行います。
  
  - 音楽ファイル再生機能
- firebaseのストレージに格納したファイル名を入力すると、ファイルを再生します。
+ firebaseのストレージに格納した音声ファイル名(ソースではoggファイルのみを対象)を入力すると、ファイルを再生します。
+ 
+ - 音量調整
+ スライダーを動かすことで再生時の音量を調整することが出来ます。
 
 ## Development server
 
