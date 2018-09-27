@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import * as firebase from 'firebase/app';
 
 import { ChatMessage } from '../models/chat-message.model';
+import { SideNavbarComponent } from '../side-navbar/side-navbar.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,13 @@ export class ChatService {
   chatMessage: ChatMessage;
   userName: string;
   audio = new Audio();
-  volumeElement: HTMLInputElement = <HTMLInputElement>document.getElementById('volume');
+  // volumeElement: HTMLInputElement = <HTMLInputElement>document.getElementById('volume');
+  volSlider: Object = {
+    'min': 0,
+    'max': 1,
+    'value': 0.5,
+    'step': 0.01
+  };
 
   constructor(
     private db: AngularFireDatabase,
@@ -104,7 +111,7 @@ export class ChatService {
       itemRef.getDownloadURL().then((url) => {
         this.audio.pause();
         this.audio.currentTime = 0;
-        const volume = Number(this.volumeElement.value) !== NaN ? Number(this.volumeElement.value) : 0.5;
+        const volume = this.volSlider['value']; // Number(this.volumeElement.value) !== NaN ? Number(this.volumeElement.value) : 0.5;
         this.audio.volume = volume;
         this.audio.src = url;
         this.audio.play();
@@ -118,7 +125,7 @@ export class ChatService {
       // Get the download URL
       itemRef.getDownloadURL().then((url) => {
         const sound = new Audio(url);
-        const volume = Number(this.volumeElement.value) !== NaN ? Number(this.volumeElement.value) : 0.5;
+        const volume = this.volSlider['value']; // Number(this.volumeElement.value) !== NaN ? Number(this.volumeElement.value) : 0.5;
         sound.volume = volume;
         sound.play();
       }).catch((error) => {

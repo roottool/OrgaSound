@@ -6,6 +6,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { MatMenuModule, MatIconModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatListModule } from '@angular/material';
+import {MatSliderModule} from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
@@ -23,6 +26,8 @@ import { AuthService } from './services/auth.service';
 
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,8 @@ import { environment } from '../environments/environment';
     SignupFormComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
+    SideNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,15 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebase),
+    MatMenuModule,
+    MatIconModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatSliderModule,
   ],
   providers: [AuthService, ChatService],
   bootstrap: [AppComponent]

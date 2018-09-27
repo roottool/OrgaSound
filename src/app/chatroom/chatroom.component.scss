@@ -1,6 +1,13 @@
+@import "../../styles.scss";
+
 .mainContent {
     display: flex;
-    height: 90vh;
+    @include mq(zr) {
+      height: calc(90vh - 30px);
+    }
+    @include mq(xl) {
+      height: 91.6vh;
+    }
   }
   
   .userListWrapper {
@@ -12,6 +19,7 @@
     flex: 1;
     order: 1;
     padding: 20px 0px 40px 30px;
+    overflow-y: auto;
     border-right: 1px solid #222;
   }
   
