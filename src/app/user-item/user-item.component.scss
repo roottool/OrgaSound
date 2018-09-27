@@ -39,5 +39,6 @@
   }
   
   .userName {
-    display: inline-block;
+    //display: inline-block;
+    word-wrap: break-word;
   }
