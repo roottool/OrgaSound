@@ -37,12 +37,6 @@ $breakpoints: (
     height: calc(100% - 64px);//93.5vh;
   }
   
-  app-navbar {
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-  }
-  
   app-chat-form {
     width: 100%;
     display: flex;
