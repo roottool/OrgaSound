@@ -2,8 +2,7 @@
 
 OrgaSoundは[Angular CLI](https://github.com/angular/angular-cli) version 6.2.2で作成されています。</br>
 バックエンドについては、firebaseを使用しています。</br>
-また、OrgaSoundはAngular 4で作成されている[BaseChat](https://github.com/wesdoyle/base-chat)を基に作成しています。</br>
-レスポンシブデザインではないため、現状ではスマートフォンから閲覧するとレイアウトが崩れてしまう可能性があります。
+また、OrgaSoundはAngular 4で作成されている[BaseChat](https://github.com/wesdoyle/base-chat)を基に作成しています。
 
 ## 主な機能
 
