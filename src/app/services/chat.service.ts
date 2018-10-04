@@ -35,9 +35,11 @@ export class ChatService {
         this.user = auth;
       }
 
-      this.getUser().subscribe(currentUser => {
-        this.userName = currentUser['username'];
-      });
+      if (auth !== undefined && auth !== null) {
+        this.getUser().subscribe(currentUser => {
+          this.userName = currentUser['username'];
+        });
+      }
     });
   }
 
