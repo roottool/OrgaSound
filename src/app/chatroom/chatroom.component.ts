@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { ChatService } from '../services/chat.service';
-import { environment } from '../../environments/environment';
 import * as firebase from 'firebase/app';
+import { PlayService } from '../services/play.service';
 
 @Component({
   selector: 'app-chatroom',
@@ -13,7 +13,10 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   beforeFeedTime: string;
   completeInit = false;
 
-  constructor(private chat: ChatService) { }
+  constructor(
+    private chat: ChatService,
+    private play: PlayService
+  ) { }
 
   ngOnInit() {
     firebase.database().ref('messages').on('value', () => {
@@ -22,9 +25,9 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
         const msg = chatMessage[0].message;
         if (this.completeInit) {
           if (msg === 'stop') {
-            this.chat.stop();
+            this.play.stop();
           } else {
-            this.chat.playSound(msg);
+            this.play.playSound(msg);
           }
         }
         this.completeInit = true;
