@@ -1,12 +1,16 @@
-<div class="container">
-  <div class="loginCard">
-    <h2 class="heading">Log In</h2>
-    <label class="label">Email</label>
-    <input [(ngModel)]="email" type="email" name="email" class="formInput" placeholder="Enter your email address" />
-    <label class="label">Password</label>
-    <input type="password" [(ngModel)]="password" name="password" class="formInput" placeholder="Enter your password" />
-    <button class="btn" id="btn-login" (click)="login()">
-      Log In
-    </button>
+<section class="container-fluid">
+  <div class="row">
+    <div class="container col-12">
+      <div class="loginCard col-12">
+        <h2 class="heading">Log In</h2>
+        <label class="label">Email</label>
+        <input [(ngModel)]="email" type="email" name="email" class="formInput" placeholder="Enter your email address" />
+        <label class="label">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="formInput" placeholder="Enter your password" />
+        <button class="btn" id="btn-login" (click)="login()">
+          Log In
+        </button>
+      </div>
+    </div>
   </div>
-</div>
+</section>

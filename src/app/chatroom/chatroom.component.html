@@ -1,12 +1,13 @@
-<div class="mainContent">
-  <div class="userListWrapper">
-    <app-user-list></app-user-list>
+<section class="container-fluid">
+  <div class="mainContent row">
+    <div class="userListWrapper col-4 col-lg-3">
+      <app-user-list></app-user-list>
+    </div>
+    <div #scroller class="feedWrapper col-8 col-lg-9">
+      <app-feed></app-feed>
+    </div>
   </div>
-  <div #scroller class="feedWrapper">
-    <app-feed></app-feed>
-  </div>
-</div>
-
+</section>
 <div class="chatFormWrapper">
   <app-chat-form></app-chat-form>
 </div>

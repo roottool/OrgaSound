@@ -6,7 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../services/auth.service';
 import * as firebase from 'firebase/app';
 
-import { ChatService } from '../services/chat.service';
+import { PlayService } from '../services/play.service';
 
 @Component({
   selector: 'app-side-navbar',
@@ -27,7 +27,7 @@ export class SideNavbarComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
     private db: AngularFireDatabase,
-    private chat: ChatService
+    private play: PlayService
   ) { }
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class SideNavbarComponent implements OnInit {
         });
       }
     });
-    this.slider = this.chat.volSlider;
+    this.slider = this.play.volSlider;
   }
 
   logout() {

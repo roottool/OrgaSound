@@ -20,8 +20,9 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
 
-import { ChatService } from './services/chat.service';
 import { AuthService } from './services/auth.service';
+import { ChatService } from './services/chat.service';
+import { PlayService } from './services/play.service';
 
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment';
@@ -60,7 +61,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatListModule,
     MatSliderModule,
   ],
-  providers: [AuthService, ChatService],
+  providers: [AuthService, ChatService, PlayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
